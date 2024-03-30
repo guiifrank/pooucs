@@ -21,8 +21,9 @@ public class Salary {
     public void setMinimalSalary(double minimalSalary) {
         this.minimalSalary = minimalSalary;
     }
-//    public double calcularSalario(double x, double y) {
-//        double total = ;
-//    }
+    public double calcularSalario(double x, double y) {
+        double total = amount / minimalSalary;
+        return total;
+    }
 
 }

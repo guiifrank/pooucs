@@ -16,6 +16,7 @@ public class Main {
         double x = sc.nextDouble();
         salary.setAmount(x);
 
+        System.out.println("O funcionário recebe " + salary.calcularSalario(y, x) + " salários mínimos.");
 
         sc.close();
     }
