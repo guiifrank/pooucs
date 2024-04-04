@@ -107,14 +107,25 @@ public class Menu {
     private void removePerson() {
         if (this.car == null) {
             System.out.println("Create a car first!");
+        } else if (this.car.getUltimaPos() == 0) {
+            System.out.println("The car is empty!");
         } else {
-            Pessoa person = this.createPerson();
-            int resposta = this.car.remove(person);
-            if (resposta == 0) {
-                System.out.println("Passageiro removido!");
+            System.out.println("Enter the name of the person to remove: ");
+            String nameToRemove = this.sc.next();
+            boolean personRemoved = false;
+
+            for (int i = 0; i < this.car.getUltimaPos(); i++) {
+                if (this.car.getOcupantes()[i].getNome().equals(nameToRemove)) {
+                    this.car.remove(this.car.getOcupantes()[i]);
+                    personRemoved = true;
+                    break;
+                }
             }
-            if (resposta == -1) {
-                System.out.println("The car is empty!");
+
+            if (personRemoved) {
+                System.out.println("Passenger removed!");
+            } else {
+                System.out.println("Person with the given name not found in the car!");
             }
         }
     }

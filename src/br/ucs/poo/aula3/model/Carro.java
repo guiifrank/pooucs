@@ -43,6 +43,14 @@ public class Carro {
         this.maxPeso = maxPeso;
     }
 
+    public Pessoa[] getOcupantes() {
+        return ocupantes;
+    }
+
+    public int getUltimaPos() {
+        return ultimaPos;
+    }
+
     public int entrar(Pessoa p) {
 
         if(this.getMaxPeso() < this.getPesoTotal() + p.getPeso()) {
@@ -61,11 +69,17 @@ public class Carro {
     }
 
     public int remove(Pessoa p) {
-        if (p.getNome() == null) {
-            return 0;
-        } else {
-            return -1;
+        for (int i = 0; i < this.ultimaPos; i++) {
+            if (ocupantes[i].equals(p)) {
+                for (int j = i; j < this.ultimaPos - 1; j++) {
+                    ocupantes[j] = ocupantes[j + 1];
+                }
+                ocupantes[this.ultimaPos - 1] = null;
+                this.ultimaPos--;
+                return 1;
+            }
         }
+        return -1;
     }
 
     @Override
