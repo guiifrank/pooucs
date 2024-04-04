@@ -30,6 +30,11 @@ public class Menu {
                 case 3 :
                     System.out.println("Adding person: ");
                     m.addPerson();
+                    break;
+                case 4 :
+                    System.out.println("Removing person: ");
+                    m.removePerson();
+                    break;
                 case 0 :
                     System.out.println("quitted");
                     m.sc.close();
@@ -46,6 +51,7 @@ public class Menu {
         System.out.println("1) create a car");
         System.out.println("2) show car");
         System.out.println("3) add person");
+        System.out.println("4) remove person");
         System.out.println("0) Quit");
         System.out.println("*********************************");
         System.out.println("select your option: ");
@@ -95,6 +101,20 @@ public class Menu {
             }
             if(resposta == -1) {
                 System.out.println("Max number of passengers reached!");
+            }
+        }
+    }
+    private void removePerson() {
+        if (this.car == null) {
+            System.out.println("Create a car first!");
+        } else {
+            Pessoa person = this.createPerson();
+            int resposta = this.car.remove(person);
+            if (resposta == 0) {
+                System.out.println("Passageiro removido!");
+            }
+            if (resposta == -1) {
+                System.out.println("The car is empty!");
             }
         }
     }

@@ -60,6 +60,14 @@ public class Carro {
         }
     }
 
+    public int remove(Pessoa p) {
+        if (p.getNome() == null) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -82,4 +90,5 @@ public class Carro {
 
         return total;
     }
+
 }
