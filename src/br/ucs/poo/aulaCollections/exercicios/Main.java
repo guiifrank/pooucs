@@ -29,6 +29,12 @@ public class Main {
         cliente.removeThird(2);
         System.out.println(cliente.getList());
 
+        cliente.addOtherList(cliente);
+        cliente.addOtherList(cliente2);
+        cliente.addOtherList(cliente3);
+        System.out.println(cliente.getList2());
+
+
 
         sc.close();
     }

@@ -10,6 +10,12 @@ public class Cliente {
     private int age;
 
     List<Cliente> list = new ArrayList<>();
+    List<Cliente> list2 = new ArrayList<>();
+
+    public boolean addOtherList(Cliente cliente) {
+        list2.add(cliente);
+        return true;
+    }
 
     public boolean addCliente(Cliente cliente) {
        list.add(cliente);
@@ -28,6 +34,10 @@ public class Cliente {
 
     public List<Cliente> getList() {
         return list;
+    }
+
+    public List<Cliente> getList2() {
+        return list2;
     }
 
     public Cliente() {
